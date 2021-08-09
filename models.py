@@ -11,8 +11,11 @@ def connect_db(app):
 
 class Pet(db.Model):
     """Pet."""
-
     __tablename__ = 'pets'
+
+    def __repr__(self) -> str:
+        p = self
+        return f'<Pet id={p.id} name={p.name} species={p.species} hunger={p.hunger}'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(20), nullable=False, unique=True)
