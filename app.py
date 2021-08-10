@@ -16,5 +16,13 @@ connect_db(app)
 
 @app.route("/")
 def home_page():
+    """Shows all pets in db"""
+    pets = Pet.query.all()
+    return render_template("list.html", pets=pets)
 
-    return render_template("home.html")
+
+@app.route("/<int:pet_id>")
+def show_pet(pet_id):
+    """Show pet detail by id"""
+    pet = Pet.query.get_or_404(pet_id)
+    return render_template("details.html", pet=pet)
