@@ -1,4 +1,4 @@
-#!/home/crappydill/CrappyCoder/python/flask-sqlalchemy/venv/bin/python
+#!/home/crappydill/CrappyCoder/flask-sqlalchemy/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
